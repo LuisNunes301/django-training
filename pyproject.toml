@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "blogapp"
+version = "0.1.0"
+description = "parte 2"
+authors = ["LuisNunes301 <vnunes30@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
