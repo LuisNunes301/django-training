@@ -18,6 +18,10 @@ run-server:
 superuser:
 	poetry run python -m manage createsuperuser
 
+
+.PHONY: test
+test:
+	poetry run python -m manage test
 .PHONY: up-dependencies-only
 up-dependencies-only:
 	test -f .env || touch .env
