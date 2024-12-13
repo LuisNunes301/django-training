@@ -2,13 +2,13 @@
 install:
 	poetry install
 
+.PHONY: migrations
+migrations:
+	poetry run python -m manage makemigrations posts
+
 .PHONY: migrate
 migrate:
 	poetry run python -m manage migrate
-
-.PHONY: migrations
-migrations:
-	poetry run python -m manage makemigrations
 
 .PHONY: run-server
 run-server:
@@ -18,10 +18,10 @@ run-server:
 superuser:
 	poetry run python -m manage createsuperuser
 
-.PHONY: up-dependencies-only
-up-dependencies-only:
-	test -f .env || touch .env
-	docker-compose -f docker-compose.dev.yml up --force-recreate db
+# .PHONY: up-dependencies-only
+# up-dependencies-only:
+# 	test -f .env || touch .env
+# 	docker-compose -f docker-compose.dev.yml up --force-recreate db
 
 .PHONY: install
 update: install migrate ;
