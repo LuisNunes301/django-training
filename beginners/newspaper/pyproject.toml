@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "newspaper"
+version = "0.1.0"
+description = ""
+authors = ["lvnunes <luisvinicius@consiste.com.br>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1.4"
+django-crispy-forms = "^2.3"
+
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.14.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+start= "python -m manage runserver"
+mkuser= "python -m manage makemigrations users"
+mkpages= "python -m manage makemigrations pages"
+mkarticles= "python -m manage makemigrations articles"
+migrate= " python -m manage migrate"
+test = "python -m manage.py test"

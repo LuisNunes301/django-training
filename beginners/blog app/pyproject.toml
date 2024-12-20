@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "blog app"
+version = "0.1.0"
+description = "training blog app in django"
+authors = ["LuisNunes301 <vnunes30@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django-filter = "^23.5"
+djangorestframework = "^3.14.0"
+django = "^5.0.1"
+django-split-settings = "^1.2.0"
+pyyaml = "^6.0.1"
+gunicorn = "^21.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.14.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+start= "python -m manage runserver"
+test = "python manage.py test"
